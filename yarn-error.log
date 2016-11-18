@@ -1,0 +1,52 @@
+Arguments: 
+  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+
+Yarn version: 
+  0.16.1
+
+Node version: 
+  6.9.1
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "private": true,
+    "scripts": {
+      "prod": "gulp --production",
+      "dev": "gulp watch"
+    },
+    "devDependencies": {
+      "bootstrap-sass": "^3.3.7",
+      "gulp": "^3.9.1",
+      "jquery": "^3.1.0",
+      "laravel-elixir": "^6.0.0-11",
+      "laravel-elixir-vue-2": "^0.2.0",
+      "laravel-elixir-webpack-official": "^1.0.2",
+      "lodash": "^4.16.2",
+      "vue": "^2.0.1",
+      "vue-resource": "^1.0.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+bower manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect ENETUNREACH 2400:cb00:2048:1::6810:3cad:443 - Local (:::0)
+      at Object.exports._errnoException (util.js:1026:11)
+      at exports._exceptionWithHostPort (util.js:1049:20)
+      at connect (net.js:879:16)
+      at net.js:1008:7
+      at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
