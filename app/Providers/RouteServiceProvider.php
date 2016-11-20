@@ -35,11 +35,16 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
+        // $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        Route::group([
+            'middleware' => 'api',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('app/Http/routes.php');
+        });
 
-        //
+        // $this->mapWebRoutes();
     }
 
     /**
@@ -49,15 +54,15 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapWebRoutes()
-    {
-        Route::group([
-            'middleware' => 'web',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('routes/web.php');
-        });
-    }
+    // protected function mapWebRoutes()
+    // {
+    //     Route::group([
+    //         'middleware' => 'web',
+    //         'namespace' => $this->namespace,
+    //     ], function ($router) {
+    //         require base_path('routes/web.php');
+    //     });
+    // }
 
     /**
      * Define the "api" routes for the application.
@@ -66,14 +71,14 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapApiRoutes()
-    {
-        Route::group([
-            'middleware' => 'api',
-            'namespace' => $this->namespace,
-            'prefix' => 'api',
-        ], function ($router) {
-            require base_path('routes/api.php');
-        });
-    }
+    // protected function mapApiRoutes()
+    // {
+    //     Route::group([
+    //         'middleware' => 'api',
+    //         'namespace' => $this->namespace,
+    //         'prefix' => 'api',
+    //     ], function ($router) {
+    //         require base_path('routes/api.php');
+    //     });
+    // }
 }
